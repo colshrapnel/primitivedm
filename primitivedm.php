@@ -46,10 +46,10 @@ class PrimitiveDM {
     public function delete($object)
     {
         $table = $this->escapeIdent(strtolower(basename(get_class($object))));
-        $sql = "SELECT * FROM $table WHERE id = ?";
+        $sql = "DELETE FROM $table WHERE id = ?";
         $this->query($sql, [$object->id]);
-        
     }
+
     public function save($object)
     {
         $table = $this->escapeIdent(strtolower(basename(get_class($object))));
